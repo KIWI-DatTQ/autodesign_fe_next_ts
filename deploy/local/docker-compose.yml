@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    image: ds_auto_design_app
+    build: ../../
+    ports:
+      - 3000:3000
+    entrypoint:
+      - sh 
+      - /app/deploy/local/docker-entrypoint.sh

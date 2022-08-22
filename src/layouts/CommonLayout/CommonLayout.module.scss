@@ -1,0 +1,34 @@
+.container {
+  background-color: #282d36;
+  overflow: hidden;
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #262a30;
+    box-shadow: 4px 18px 37px rgba(16, 17, 18, 0.3);
+    z-index: 999;
+  }
+  .content {
+    padding-top: 92px;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 1024px) {
+    .content {
+      padding-top: 74px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content {
+      padding-top: 74px;
+      background-image: none;
+    }
+  }
+  .footer {
+    background: red;
+  }
+}
