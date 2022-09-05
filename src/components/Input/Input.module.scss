@@ -1,0 +1,10 @@
+@import "./src/styles/variables/colors.scss";
+@import "./src/styles/variables/font-size.scss";
+.input {
+  border-radius: 10px;
+  background-color: $primary-white;
+  height: 50px;
+  padding: 10px;
+  font-size: $font-sm;
+  border: 1px solid $primary-black;
+}

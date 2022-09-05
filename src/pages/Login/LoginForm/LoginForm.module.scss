@@ -1,0 +1,26 @@
+@import "./src/styles/variables/colors.scss";
+.container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.loginForm {
+  row-gap: 10px;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  min-width: 500px;
+  background-color: $primary-white;
+}
+.buttonLogin {
+  margin-top: 25px;
+}
+.buttonRegister {
+  background-color: $primary-green !important;
+}
+.link {
+  align-self: center;
+}

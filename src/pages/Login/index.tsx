@@ -1,8 +1,10 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import Container from "../HomePage/components/Container";
-import className from "./Login.module.scss";
+import Container, { ENUM_CONTAINER_DIRECTION } from "@components/Container";
+import classes from "./Login.module.scss";
+import LoginInformation from "./LoginInformation";
+import LoginForm from "./LoginForm";
+import LoginFooter from "./LoginFooter";
 
 const Login = () => {
   const router = useRouter();
@@ -14,16 +16,18 @@ const Login = () => {
   }, [pathname, router]);
 
   return (
-    <Container className={className.container}>
+    <Container className={classes.container}>
       <>
-        <Grid item className={className.informationTextFieldGroup}>
-          <Typography component="span">Username: </Typography>
-          <TextField />
-        </Grid>
-        <Grid item className={className.informationTextFieldGroup}>
-          <Typography component="span">Password: </Typography>
-          <TextField />
-        </Grid>
+        <Container
+          className={classes.login}
+          direction={ENUM_CONTAINER_DIRECTION.HORIZONTAL}
+        >
+          <>
+            <LoginInformation />
+            <LoginForm />
+          </>
+        </Container>
+        <LoginFooter />
       </>
     </Container>
   );

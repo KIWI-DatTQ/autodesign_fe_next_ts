@@ -1,0 +1,8 @@
+@import "./src/styles/variables/colors.scss";
+@import "./src/styles/variables/font-size.scss";
+@import "./src/styles/variables/bold.scss";
+.link {
+  color: $primary-blue;
+  font-size: $font-sm;
+  font-weight: $bold-lg;
+}

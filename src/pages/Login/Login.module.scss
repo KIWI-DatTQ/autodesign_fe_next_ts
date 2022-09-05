@@ -1,10 +1,8 @@
+@import "./src/styles/variables/colors.scss";
 .container {
-  width: 300px;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
 }
-.informationTextFieldGroup {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.login {
+  flex-grow: 1;
 }

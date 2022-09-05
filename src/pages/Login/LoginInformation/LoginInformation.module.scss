@@ -1,0 +1,17 @@
+@import "./src/styles/variables/font-size.scss";
+@import "./src/styles/variables/bold.scss";
+.container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.spanTitle {
+  font-size: $font-lg;
+  font-weight: $bold-base;
+}
+.spanDescription {
+  font-size: $font-base;
+}

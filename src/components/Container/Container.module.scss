@@ -1,0 +1,11 @@
+@import "./src/styles/variables/colors.scss";
+.container {
+  display: flex;
+  background-color: $primary-blue;
+}
+.containerVertical {
+  flex-direction: column;
+}
+.containerHorizontal {
+  flex-direction: row;
+}
