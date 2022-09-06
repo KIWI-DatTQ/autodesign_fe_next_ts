@@ -1,0 +1,17 @@
+@import "./src/styles/variables/colors.scss";
+@import "./src/styles/variables/bold.scss";
+@import "./src/styles/variables/font-size.scss";
+.buttonSidebar {
+  background-color: $primary-blue;
+  border-radius: 0 10px 10px 0 !important;
+  margin-top: 20px;
+  height: 50px !important;
+  width: 50px !important;
+}
+.listItem {
+  span {
+    color: $primary-black;
+    font-weight: $bold-base;
+    font-size: $font-sm;
+  }
+}

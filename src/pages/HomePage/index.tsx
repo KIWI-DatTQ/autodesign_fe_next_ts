@@ -1,5 +1,5 @@
 import React from "react";
-import CommonLayout from "../../layouts/CommonLayout/CommonLayout";
+import CommonLayout from "@layouts/CommonLayout/CommonLayout";
 
 const Homepage = () => {
   return (

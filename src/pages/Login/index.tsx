@@ -5,15 +5,21 @@ import classes from "./Login.module.scss";
 import LoginInformation from "./LoginInformation";
 import LoginForm from "./LoginForm";
 import LoginFooter from "./LoginFooter";
+import { getToken } from "@utils/auth";
 
 const Login = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  const token = getToken();
   useEffect(() => {
-    if (pathname !== "/login") {
-      router.push("/login");
+    if (token) {
+      router.push("/");
+    } else {
+      if (pathname !== "/login") {
+        router.push("/login");
+      }
     }
-  }, [pathname, router]);
+  }, [pathname, router, token]);
 
   return (
     <Container className={classes.container}>
