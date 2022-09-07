@@ -1,6 +1,6 @@
-import { Grid } from "@mui/material";
 import React from "react";
-import classes from "./Container.module.scss";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { Grid, Theme } from "@material-ui/core";
 
 export const ENUM_CONTAINER_DIRECTION = {
   VERTICAL: "VERTICAL",
@@ -15,6 +15,7 @@ interface Props {
 
 const Container: React.FC<Props> = (props) => {
   const { children, className, direction } = props;
+  const classes = useStyles();
   const classRoot =
     direction === ENUM_CONTAINER_DIRECTION.HORIZONTAL
       ? classes.containerHorizontal
@@ -26,3 +27,17 @@ const Container: React.FC<Props> = (props) => {
   );
 };
 export default Container;
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: "flex",
+    },
+    containerVertical: {
+      flexDirection: "column",
+    },
+    containerHorizontal: {
+      flexDirection: "row",
+    },
+  })
+);

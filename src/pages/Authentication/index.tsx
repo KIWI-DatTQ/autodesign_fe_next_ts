@@ -12,7 +12,6 @@ const Authentication: React.FC<Props> = (props) => {
   const router = useRouter();
   const token = getToken();
   useEffect(() => {
-    console.log(token);
     if (token) {
       setIsAuth(true);
     } else {

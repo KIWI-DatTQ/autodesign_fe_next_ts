@@ -1,10 +1,10 @@
 import React from "react";
-import HomepageComponent from "@pages/HomePage";
+import ImportComponent from "@pages/ImportComponent";
 
 const Home = () => {
   return (
     <>
-      <HomepageComponent />
+      <ImportComponent />
     </>
   );
 };

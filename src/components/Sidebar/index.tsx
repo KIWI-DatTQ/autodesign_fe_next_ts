@@ -1,22 +1,25 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import {
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Theme,
+} from "@material-ui/core";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
+import Colors from "@constants/styles/colors";
+import FontSize from "@constants/styles/font-size";
+import TextBold from "@constants/styles/text-bold";
 import Container from "@components/Container";
-import classes from "./Sidebar.module.scss";
 import ButtonCustom from "@components/Button";
 import {
-  BackupTable,
   ImportExport,
-  Logout,
   ViewHeadline,
-} from "@mui/icons-material";
+  Tablet,
+  ExitToApp,
+} from "@material-ui/icons";
 import DividerCustom from "@components/Divider";
 import { logout } from "@utils/auth";
 import { useRouter } from "next/router";
@@ -26,6 +29,7 @@ type Anchor = "top" | "left" | "bottom" | "right";
 const Sidebar: React.FC<{}> = () => {
   const anchor = "left";
   const router = useRouter();
+  const classes = useStyles();
 
   const [state, setState] = React.useState({
     top: false,
@@ -63,7 +67,7 @@ const Sidebar: React.FC<{}> = () => {
     },
     {
       name: "Table",
-      icon: <BackupTable />,
+      icon: <Tablet />,
       onClick: () => {
         router.push("/device");
       },
@@ -72,7 +76,7 @@ const Sidebar: React.FC<{}> = () => {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      className={classes.sidebar}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -81,14 +85,14 @@ const Sidebar: React.FC<{}> = () => {
         {listItem.map((item) => (
           <ListItem
             key={item.name}
-            disablePadding
+            disableGutters
             className={classes.listItem}
             onClick={item.onClick}
           >
-            <ListItemButton>
+            <ButtonCustom className={classes.button}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.name} />
-            </ListItemButton>
+            </ButtonCustom>
           </ListItem>
         ))}
       </List>
@@ -97,15 +101,15 @@ const Sidebar: React.FC<{}> = () => {
         <ListItem
           className={classes.listItem}
           key={"Logout"}
-          disablePadding
+          disableGutters
           onClick={onLogout}
         >
-          <ListItemButton>
+          <ButtonCustom className={classes.button}>
             <ListItemIcon>
-              <Logout />
+              <ExitToApp />
             </ListItemIcon>
             <ListItemText primary={"Logout"} />
-          </ListItemButton>
+          </ButtonCustom>
         </ListItem>
       </List>
     </Box>
@@ -134,3 +138,28 @@ const Sidebar: React.FC<{}> = () => {
   );
 };
 export default Sidebar;
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    sidebar: {
+      width: 250,
+    },
+    buttonSidebar: {
+      backgroundColor: Colors.PRIMARY_COLOR.BLUE,
+      borderRadius: "0 10px 10px 0",
+      marginTop: "20px",
+      height: "50px",
+      width: "50px",
+    },
+    listItem: {
+      "& span": {
+        color: Colors.PRIMARY_COLOR.BLACK,
+        fontWeight: TextBold.PRIMARY_BOLD.BASE,
+        fontSize: FontSize.PRIMARY_FONT.SM,
+      },
+    },
+    button: {
+      backgroundColor: Colors.PRIMARY_COLOR.WHITE,
+    },
+  })
+);
