@@ -9,7 +9,7 @@ export const ENUM_CONTAINER_DIRECTION = {
 
 interface Props {
   className?: string;
-  children: JSX.Element;
+  children?: JSX.Element | JSX.Element[];
   direction?: string;
 }
 

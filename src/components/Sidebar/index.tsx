@@ -19,6 +19,8 @@ import {
   ViewHeadline,
   Tablet,
   ExitToApp,
+  MenuBook,
+  Business,
 } from "@material-ui/icons";
 import DividerCustom from "@components/Divider";
 import { logout } from "@utils/auth";
@@ -59,6 +61,13 @@ const Sidebar: React.FC<{}> = () => {
 
   const listItem = [
     {
+      name: "Introduction",
+      icon: <MenuBook />,
+      onClick: () => {
+        router.push("/introduction");
+      },
+    },
+    {
       name: "Import File",
       icon: <ImportExport />,
       onClick: () => {
@@ -70,6 +79,13 @@ const Sidebar: React.FC<{}> = () => {
       icon: <Tablet />,
       onClick: () => {
         router.push("/device");
+      },
+    },
+    {
+      name: "About Us",
+      icon: <Business />,
+      onClick: () => {
+        router.push("/aboutus");
       },
     },
   ];
