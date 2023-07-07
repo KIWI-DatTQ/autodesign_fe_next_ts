@@ -7,7 +7,8 @@ const Home = () => {
       const url = "keio-train-app://member_card";
       window.location.href = url;
     } catch (error) {
-      console.log(error);
+      window.location.href =
+        "https://apps.apple.com/jp/app/%E4%BA%AC%E7%8E%8B%E3%82%A2%E3%83%97%E3%83%AA/id1078553611";
     }
   };
   useEffect(() => {
