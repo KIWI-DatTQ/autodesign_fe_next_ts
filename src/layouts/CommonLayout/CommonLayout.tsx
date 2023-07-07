@@ -14,7 +14,7 @@ const CommonLayout: React.FC<Props> = ({ children }) => {
   const pathname = router.pathname;
   return (
     <>
-      {pathname === "/login" ? (
+      {/* {pathname === "/login" ? (
         children
       ) : (
         <Authentication>
@@ -33,7 +33,8 @@ const CommonLayout: React.FC<Props> = ({ children }) => {
             </>
           </Container>
         </Authentication>
-      )}
+      )} */}
+      {children}
     </>
   );
 };

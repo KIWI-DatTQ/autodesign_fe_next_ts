@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ImportComponent from "@pages/ImportComponent";
 import ButtonCustom from "@components/Button";
 
 const Home = () => {
