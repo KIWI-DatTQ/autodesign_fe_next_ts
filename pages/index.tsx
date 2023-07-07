@@ -17,8 +17,8 @@ const Home = () => {
           window.location.href = IOS_URL;
           setTimeout(() => {
             window.location.search = query.toString();
-          }, 25);
-        }, 25);
+          }, 100);
+        }, 100);
       }
     } catch (error) {}
   };
